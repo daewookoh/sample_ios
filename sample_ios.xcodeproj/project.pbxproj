@@ -8,13 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		1896519D59B8B150EAFD85EF /* Pods_sample_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83230845C9CCF3E13A0548EF /* Pods_sample_ios.framework */; };
+		4C51B1C320ECAFB2003AE666 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1C220ECAFB2003AE666 /* Common.swift */; };
+		4C51B1CD20ECAFC0003AE666 /* dteams_logo_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1C520ECAFBF003AE666 /* dteams_logo_40.png */; };
+		4C51B1CE20ECAFC0003AE666 /* dteams_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1C620ECAFBF003AE666 /* dteams_logo_120.png */; };
+		4C51B1CF20ECAFC0003AE666 /* dreamteams_intro_ios.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1C720ECAFBF003AE666 /* dreamteams_intro_ios.png */; };
+		4C51B1D020ECAFC0003AE666 /* dteams_logo_1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1C820ECAFC0003AE666 /* dteams_logo_1024.png */; };
+		4C51B1D120ECAFC0003AE666 /* dteams_logo_60.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1CA20ECAFC0003AE666 /* dteams_logo_60.png */; };
+		4C51B1D220ECAFC0003AE666 /* dteams_logo_180.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1CB20ECAFC0003AE666 /* dteams_logo_180.png */; };
+		4C51B1D420ECAFD4003AE666 /* x.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1D320ECAFD4003AE666 /* x.jpeg */; };
+		4C51B1DA20ECAFF4003AE666 /* ErrorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1D520ECAFF3003AE666 /* ErrorViewController.swift */; };
+		4C51B1DB20ECAFF4003AE666 /* CheckNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1D620ECAFF3003AE666 /* CheckNetwork.swift */; };
+		4C51B1DC20ECAFF4003AE666 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1D720ECAFF3003AE666 /* EventViewController.swift */; };
+		4C51B1DD20ECAFF4003AE666 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1D820ECAFF4003AE666 /* IntroViewController.swift */; };
+		4C51B1DE20ECAFF4003AE666 /* APIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1D920ECAFF4003AE666 /* APIHelper.swift */; };
+		4C51B1E120ECAFFE003AE666 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1DF20ECAFFD003AE666 /* MainViewController.swift */; };
+		4C51B1E220ECAFFE003AE666 /* SnsLinkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1E020ECAFFD003AE666 /* SnsLinkHelper.swift */; };
+		4C51B1EB20ECB025003AE666 /* NaverAuth.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1E520ECB025003AE666 /* NaverAuth.bundle */; };
+		4C51B1EC20ECB025003AE666 /* libNaverLogin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1E720ECB025003AE666 /* libNaverLogin.a */; };
+		4C51B1ED20ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1EA20ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.m */; };
+		4C51B1F220ECB0D7003AE666 /* KakaoOpenSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1EE20ECB0D6003AE666 /* KakaoOpenSDK.framework */; };
+		4C51B1F320ECB0D7003AE666 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1EF20ECB0D6003AE666 /* KakaoCommon.framework */; };
+		4C51B1F420ECB0D7003AE666 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1F020ECB0D6003AE666 /* KakaoMessageTemplate.framework */; };
+		4C51B1F520ECB0D7003AE666 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1F120ECB0D7003AE666 /* KakaoLink.framework */; };
 		4C8B2ADB20EC8DC5003034D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2ADA20EC8DC5003034D8 /* AppDelegate.swift */; };
 		4C8B2ADD20EC8DC5003034D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2ADC20EC8DC5003034D8 /* ViewController.swift */; };
-		4C8B2AE020EC8DC5003034D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2ADE20EC8DC5003034D8 /* Main.storyboard */; };
 		4C8B2AE220EC8DC7003034D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2AE120EC8DC7003034D8 /* Assets.xcassets */; };
 		4C8B2AE520EC8DC7003034D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2AE320EC8DC7003034D8 /* LaunchScreen.storyboard */; };
 		4C8B2AF020EC8DC7003034D8 /* sample_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2AEF20EC8DC7003034D8 /* sample_iosTests.swift */; };
 		4C8B2AFB20EC8DC7003034D8 /* sample_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2AFA20EC8DC7003034D8 /* sample_iosUITests.swift */; };
+		4C8B2B4820EC9556003034D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2B4720EC9556003034D8 /* Main.storyboard */; };
 		9AA8FF32BE0F6FB238ECC90F /* Pods_sample_iosUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 914702599878D3DED1F16715 /* Pods_sample_iosUITests.framework */; };
 		C3415F186C2F120D2C637820 /* Pods_sample_iosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F4BDA3EA4658CC439A9DD6 /* Pods_sample_iosTests.framework */; };
 /* End PBXBuildFile section */
@@ -39,10 +61,36 @@
 /* Begin PBXFileReference section */
 		1B32C983C6A0C15E87B4AC93 /* Pods-sample_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sample_iosTests/Pods-sample_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		25903C9107912B01F5E82A8D /* Pods-sample_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample_iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sample_iosUITests/Pods-sample_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4C51B1C220ECAFB2003AE666 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		4C51B1C520ECAFBF003AE666 /* dteams_logo_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_40.png; sourceTree = "<group>"; };
+		4C51B1C620ECAFBF003AE666 /* dteams_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_120.png; sourceTree = "<group>"; };
+		4C51B1C720ECAFBF003AE666 /* dreamteams_intro_ios.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dreamteams_intro_ios.png; sourceTree = "<group>"; };
+		4C51B1C820ECAFC0003AE666 /* dteams_logo_1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_1024.png; sourceTree = "<group>"; };
+		4C51B1C920ECAFC0003AE666 /* bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bridge.h; sourceTree = "<group>"; };
+		4C51B1CA20ECAFC0003AE666 /* dteams_logo_60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_60.png; sourceTree = "<group>"; };
+		4C51B1CB20ECAFC0003AE666 /* dteams_logo_180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_180.png; sourceTree = "<group>"; };
+		4C51B1D320ECAFD4003AE666 /* x.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = x.jpeg; sourceTree = "<group>"; };
+		4C51B1D520ECAFF3003AE666 /* ErrorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorViewController.swift; sourceTree = "<group>"; };
+		4C51B1D620ECAFF3003AE666 /* CheckNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckNetwork.swift; sourceTree = "<group>"; };
+		4C51B1D720ECAFF3003AE666 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		4C51B1D820ECAFF4003AE666 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4C51B1D920ECAFF4003AE666 /* APIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIHelper.swift; sourceTree = "<group>"; };
+		4C51B1DF20ECAFFD003AE666 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4C51B1E020ECAFFD003AE666 /* SnsLinkHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnsLinkHelper.swift; sourceTree = "<group>"; };
+		4C51B1E420ECB025003AE666 /* NaverThirdPartyLoginConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaverThirdPartyLoginConnection.h; sourceTree = "<group>"; };
+		4C51B1E520ECB025003AE666 /* NaverAuth.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NaverAuth.bundle; sourceTree = "<group>"; };
+		4C51B1E620ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NLoginThirdPartyOAuth20InAppBrowserViewController.h; sourceTree = "<group>"; };
+		4C51B1E720ECB025003AE666 /* libNaverLogin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNaverLogin.a; sourceTree = "<group>"; };
+		4C51B1E820ECB025003AE666 /* NaverThirdPartyConstantsForApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NaverThirdPartyConstantsForApp.h; sourceTree = "<group>"; };
+		4C51B1E920ECB025003AE666 /* dreamteams_ios-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "dreamteams_ios-Bridging-Header.h"; sourceTree = "<group>"; };
+		4C51B1EA20ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NLoginThirdPartyOAuth20InAppBrowserViewController.m; sourceTree = "<group>"; };
+		4C51B1EE20ECB0D6003AE666 /* KakaoOpenSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoOpenSDK.framework; sourceTree = "<group>"; };
+		4C51B1EF20ECB0D6003AE666 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
+		4C51B1F020ECB0D6003AE666 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
+		4C51B1F120ECB0D7003AE666 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
 		4C8B2AD720EC8DC5003034D8 /* sample_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8B2ADA20EC8DC5003034D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8B2ADC20EC8DC5003034D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		4C8B2ADF20EC8DC5003034D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C8B2AE120EC8DC7003034D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C8B2AE420EC8DC7003034D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C8B2AE620EC8DC7003034D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +100,7 @@
 		4C8B2AF620EC8DC7003034D8 /* sample_iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sample_iosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8B2AFA20EC8DC7003034D8 /* sample_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sample_iosUITests.swift; sourceTree = "<group>"; };
 		4C8B2AFC20EC8DC7003034D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C8B2B4720EC9556003034D8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		61E7203136EC46728CFC5E6A /* Pods-sample_iosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample_iosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sample_iosTests/Pods-sample_iosTests.release.xcconfig"; sourceTree = "<group>"; };
 		83230845C9CCF3E13A0548EF /* Pods_sample_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sample_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		88848851F9AFDD58FC898D13 /* Pods-sample_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-sample_ios/Pods-sample_ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +115,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C51B1F420ECB0D7003AE666 /* KakaoMessageTemplate.framework in Frameworks */,
+				4C51B1EC20ECB025003AE666 /* libNaverLogin.a in Frameworks */,
+				4C51B1F520ECB0D7003AE666 /* KakaoLink.framework in Frameworks */,
+				4C51B1F320ECB0D7003AE666 /* KakaoCommon.framework in Frameworks */,
 				1896519D59B8B150EAFD85EF /* Pods_sample_ios.framework in Frameworks */,
+				4C51B1F220ECB0D7003AE666 /* KakaoOpenSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,6 +143,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C51B1E320ECB025003AE666 /* Naver */ = {
+			isa = PBXGroup;
+			children = (
+				4C51B1E420ECB025003AE666 /* NaverThirdPartyLoginConnection.h */,
+				4C51B1E520ECB025003AE666 /* NaverAuth.bundle */,
+				4C51B1E620ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.h */,
+				4C51B1E720ECB025003AE666 /* libNaverLogin.a */,
+				4C51B1E820ECB025003AE666 /* NaverThirdPartyConstantsForApp.h */,
+				4C51B1E920ECB025003AE666 /* dreamteams_ios-Bridging-Header.h */,
+				4C51B1EA20ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.m */,
+			);
+			path = Naver;
+			sourceTree = "<group>";
+		};
 		4C8B2ACE20EC8DC5003034D8 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +164,7 @@
 				4C8B2AEE20EC8DC7003034D8 /* sample_iosTests */,
 				4C8B2AF920EC8DC7003034D8 /* sample_iosUITests */,
 				4C8B2AD820EC8DC5003034D8 /* Products */,
+				4C51B1E320ECB025003AE666 /* Naver */,
 				972180B4C9C66D974439EA3B /* Pods */,
 				E6591E597A68A95DF77F38E7 /* Frameworks */,
 			);
@@ -115,11 +184,27 @@
 			isa = PBXGroup;
 			children = (
 				4C8B2ADA20EC8DC5003034D8 /* AppDelegate.swift */,
+				4C51B1C220ECAFB2003AE666 /* Common.swift */,
+				4C51B1D920ECAFF4003AE666 /* APIHelper.swift */,
+				4C51B1D620ECAFF3003AE666 /* CheckNetwork.swift */,
+				4C51B1D520ECAFF3003AE666 /* ErrorViewController.swift */,
+				4C51B1D720ECAFF3003AE666 /* EventViewController.swift */,
+				4C51B1D820ECAFF4003AE666 /* IntroViewController.swift */,
 				4C8B2ADC20EC8DC5003034D8 /* ViewController.swift */,
-				4C8B2ADE20EC8DC5003034D8 /* Main.storyboard */,
+				4C51B1DF20ECAFFD003AE666 /* MainViewController.swift */,
+				4C51B1E020ECAFFD003AE666 /* SnsLinkHelper.swift */,
 				4C8B2AE120EC8DC7003034D8 /* Assets.xcassets */,
-				4C8B2AE320EC8DC7003034D8 /* LaunchScreen.storyboard */,
 				4C8B2AE620EC8DC7003034D8 /* Info.plist */,
+				4C8B2B4720EC9556003034D8 /* Main.storyboard */,
+				4C8B2AE320EC8DC7003034D8 /* LaunchScreen.storyboard */,
+				4C51B1C920ECAFC0003AE666 /* bridge.h */,
+				4C51B1D320ECAFD4003AE666 /* x.jpeg */,
+				4C51B1C720ECAFBF003AE666 /* dreamteams_intro_ios.png */,
+				4C51B1C520ECAFBF003AE666 /* dteams_logo_40.png */,
+				4C51B1CA20ECAFC0003AE666 /* dteams_logo_60.png */,
+				4C51B1C620ECAFBF003AE666 /* dteams_logo_120.png */,
+				4C51B1CB20ECAFC0003AE666 /* dteams_logo_180.png */,
+				4C51B1C820ECAFC0003AE666 /* dteams_logo_1024.png */,
 			);
 			path = sample_ios;
 			sourceTree = "<group>";
@@ -158,6 +243,10 @@
 		E6591E597A68A95DF77F38E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4C51B1EF20ECB0D6003AE666 /* KakaoCommon.framework */,
+				4C51B1F120ECB0D7003AE666 /* KakaoLink.framework */,
+				4C51B1F020ECB0D6003AE666 /* KakaoMessageTemplate.framework */,
+				4C51B1EE20ECB0D6003AE666 /* KakaoOpenSDK.framework */,
 				83230845C9CCF3E13A0548EF /* Pods_sample_ios.framework */,
 				A5F4BDA3EA4658CC439A9DD6 /* Pods_sample_iosTests.framework */,
 				914702599878D3DED1F16715 /* Pods_sample_iosUITests.framework */,
@@ -273,9 +362,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C51B1D420ECAFD4003AE666 /* x.jpeg in Resources */,
 				4C8B2AE520EC8DC7003034D8 /* LaunchScreen.storyboard in Resources */,
+				4C51B1EB20ECB025003AE666 /* NaverAuth.bundle in Resources */,
 				4C8B2AE220EC8DC7003034D8 /* Assets.xcassets in Resources */,
-				4C8B2AE020EC8DC5003034D8 /* Main.storyboard in Resources */,
+				4C51B1D220ECAFC0003AE666 /* dteams_logo_180.png in Resources */,
+				4C51B1D120ECAFC0003AE666 /* dteams_logo_60.png in Resources */,
+				4C51B1D020ECAFC0003AE666 /* dteams_logo_1024.png in Resources */,
+				4C51B1CD20ECAFC0003AE666 /* dteams_logo_40.png in Resources */,
+				4C51B1CE20ECAFC0003AE666 /* dteams_logo_120.png in Resources */,
+				4C8B2B4820EC9556003034D8 /* Main.storyboard in Resources */,
+				4C51B1CF20ECAFC0003AE666 /* dreamteams_intro_ios.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,8 +490,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C51B1DB20ECAFF4003AE666 /* CheckNetwork.swift in Sources */,
+				4C51B1ED20ECB025003AE666 /* NLoginThirdPartyOAuth20InAppBrowserViewController.m in Sources */,
 				4C8B2ADD20EC8DC5003034D8 /* ViewController.swift in Sources */,
+				4C51B1E220ECAFFE003AE666 /* SnsLinkHelper.swift in Sources */,
+				4C51B1DD20ECAFF4003AE666 /* IntroViewController.swift in Sources */,
+				4C51B1DA20ECAFF4003AE666 /* ErrorViewController.swift in Sources */,
+				4C51B1DE20ECAFF4003AE666 /* APIHelper.swift in Sources */,
+				4C51B1C320ECAFB2003AE666 /* Common.swift in Sources */,
+				4C51B1E120ECAFFE003AE666 /* MainViewController.swift in Sources */,
 				4C8B2ADB20EC8DC5003034D8 /* AppDelegate.swift in Sources */,
+				4C51B1DC20ECAFF4003AE666 /* EventViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,14 +536,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		4C8B2ADE20EC8DC5003034D8 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C8B2ADF20EC8DC5003034D8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		4C8B2AE320EC8DC7003034D8 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -500,11 +598,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -554,10 +653,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_NAME)/bridge.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -570,15 +670,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZUCLFV3B6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = sample_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Naver",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.dreamteams.sample-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -589,15 +697,23 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = GZUCLFV3B6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = sample_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Naver",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.co.dreamteams.sample-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
