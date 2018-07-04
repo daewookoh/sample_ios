@@ -23,6 +23,8 @@ class Common {
     let naver_url_scheme:String = "dreamteams"
     let naver_app_name:String = "네이버 아이디로 로그인"
     
+    let gcm_id:String = "네이버 아이디로 로그인"
+    
     let kakao_template_id = "10642"
     let apiHelper = APIHelper()
     
