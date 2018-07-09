@@ -88,6 +88,33 @@
 		<string>fbauth</string>
 		<string>fbshareextension</string>
 		<string>fbauth2</string>
+        <string>kftc-bankpay</string>
+        <string>ispmobile</string>
+        <string>itms-apps</string>
+        <string>hdcardappcardansimclick</string>
+        <string>smhyundaiansimclick</string>
+        <string>shinhan-sr-ansimclick</string>
+        <string>smshinhanansimclick</string>
+        <string>kb-acp</string>
+        <string>mpocket.online.ansimclick</string>
+        <string>ansimclickscard</string>
+        <string>ansimclickipcollect</string>
+        <string>vguardstart</string>
+        <string>samsungpay</string>
+        <string>scardcertiapp</string>
+        <string>lottesmartpay</string>
+        <string>lotteappcard</string>
+        <string>cloudpay</string>
+        <string>nhappvardansimclick</string>
+        <string>nonghyupcardansimclick</string>
+        <string>citispay</string>
+        <string>citicardappkr</string>
+        <string>citimobileapp</string>
+        <string>kakaotalk</string>
+        <string>payco</string>
+        <string>lpayapp</string> <!-- 롯데 L페이 -->
+        <string>hanamopmoasign</string> <!-- 하나카드 공인인증앱 -->
+        <string>wooripay</string> <!-- 우리페이 -->
 	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>

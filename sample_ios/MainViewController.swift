@@ -28,6 +28,7 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
     var sUrl:String = ""
     let common = Common()
     let apiHelper = APIHelper()
+    var createWebView: WKWebView!
     
     // 네이버 로그인
     var foundCharacters = "";
@@ -35,6 +36,95 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
     var id = ""
     var gender = ""
     var name = ""
+    
+    // 웹뷰 팝업처리
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        
+        //뷰를 생성하는 경우
+        let frame = UIScreen.main.bounds
+        
+        //파라미터로 받은 configuration
+        createWebView = WKWebView(frame: frame, configuration: configuration)
+        
+        //오토레이아웃 처리
+        createWebView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        
+        createWebView.navigationDelegate = self
+        createWebView.uiDelegate = self
+        
+        
+        view.addSubview(createWebView!)
+        
+        return createWebView!
+        
+        /* 현재 창에서 열고 싶은 경우
+         self.webView.load(navigationAction.request)
+         return nil
+         */
+    }
+    
+    func webViewDidClose(_ webView: WKWebView) {
+        if webView == createWebView {
+            createWebView?.removeFromSuperview()
+            createWebView = nil
+        }
+    }
+    // 웹뷰 팝업처리 끝
+    
+    // 웹뷰 결제처리
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+  
+        guard let url = navigationAction.request.url else {
+            decisionHandler(.cancel)
+            return
+        }
+        
+        if url.absoluteString.range(of: "//itunes.apple.com/") != nil {
+            UIApplication.shared.open(url)
+            decisionHandler(.cancel)
+            return
+            
+        } else if !url.absoluteString.hasPrefix("http://") && !url.absoluteString.hasPrefix("https://") {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+                decisionHandler(.cancel)
+                return
+            }
+        }
+        
+        switch navigationAction.navigationType {
+        case .linkActivated:
+            if navigationAction.targetFrame == nil || !navigationAction.targetFrame!.isMainFrame {
+                webView.load(URLRequest(url: url))
+                decisionHandler(.cancel)
+                return
+            }
+        case .backForward:
+            break
+        case .formResubmitted:
+            break
+        case .formSubmitted:
+            break
+        case .other:
+            break
+        case .reload:
+            break
+        }
+        
+        decisionHandler(.allow)
+    }
+    
+    func webView(webView: WKWebView, createWebViewWithConfiguration configuration: WKWebViewConfiguration, forNavigationAction navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        guard let url = navigationAction.request.url else {
+            return nil
+        }
+        guard let targetFrame = navigationAction.targetFrame, targetFrame.isMainFrame else {
+            webView.load(URLRequest(url: url))
+            return nil
+        }
+        return nil
+    }
+    // 웹뷰 결제처리 끝
     
     // 로그인전
     // 로그인 토큰이 없는 경우, 로그인 화면을 오픈한다.
@@ -142,7 +232,7 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
     override func loadView() {
         super.loadView()
         
-        UserDefaults.standard.register(defaults: ["UserAgent": common.user_agent])
+        UserDefaults.standard.register(defaults: ["UserAgent": UIWebView().stringByEvaluatingJavaScript(from: "navigator.userAgent")! + common.user_agent])
         
         // ios 11이하 버젼에서는 스토리보드를 이용한 WKWebView를 사용할수 없으므로 아래와 같이 수동처리
         let contentController = WKUserContentController()
