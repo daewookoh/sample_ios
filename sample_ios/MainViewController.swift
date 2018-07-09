@@ -13,17 +13,13 @@ import MessageUI
 import Social
 import FBSDKShareKit
 
-
-@objc protocol JSInterface : JSExport {
-    func contentShare(_ object: AnyObject)
-}
-
-class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, XMLParserDelegate, JSInterface, MFMessageComposeViewControllerDelegate {
+class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, XMLParserDelegate, MFMessageComposeViewControllerDelegate {
 
     
     
     // ios 11이하 버젼에서는 스토리보드를 이용한 WKWebView를 사용할수 없으므로 아래와 같이 수동처리
     //@IBOutlet weak var webView: WKWebView!
+    var hiddenWebView: WKWebView!
     var webView: WKWebView!
     var sUrl:String = ""
     let common = Common()
@@ -464,7 +460,7 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
     override func viewWillAppear(_ animated: Bool) {
         setNavController()
         checkNetwork()
-        
+        sendDeviceInfo()
         
         var url = URL(string: common.default_url)
         if(!sUrl.isEmpty){
@@ -553,92 +549,41 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
         self.navigationController!.view.layer.add(transition, forKey: nil)
     }
     
-    
-    func contentShare(_ object: AnyObject) {
-        print("~contentShare: \(object)")
+    func sendDeviceInfo(){
         
-        if let data = object.data(using: String.Encoding.utf8.rawValue) {
-            let json = try! JSONSerialization.jsonObject(with: data, options: []) as! [String : Any]
-            
-            let share_type = json["share_type"] as? String
-            let link_url = json["link_url"] as? String
-            let title = json["title"] as? String
-            let img_url = json["img_url"] as? String
-            let content = json["content"] as? String
-            /*
-             if share_type == "FACEBOOK" {
-             
-             self.activityIndicator.startAnimating()
-             DispatchQueue.main.async(execute: {() -> Void in
-             self.activityIndicator.stopAnimating()
-             self.facebookShareLink(link_url)
-             })
-             
-             //self.activityIndicator.startAnimating()
-             //if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeFacebook) {
-             //    self.activityIndicator.stopAnimating()
-             //    let post = SLComposeViewController(forServiceType: SLServiceTypeFacebook)!
-             //    post.setInitialText("\(title) \(link_url)")
-             //    self.present(post, animated: true, completion: nil)
-             //}
-             
-             } else if share_type == "KAKAO" {
-             let template = KMTFeedTemplate { (feedTemplateBuilder) in
-             feedTemplateBuilder.content = KMTContentObject(builderBlock: { (contentBuilder) in
-             contentBuilder.title = title
-             contentBuilder.desc = content
-             contentBuilder.imageURL = URL(string: img_url)!
-             contentBuilder.link = KMTLinkObject(builderBlock: { (linkBuilder) in
-             linkBuilder.mobileWebURL = URL(string: link_url)
-             })
-             })
-             }
-             // 카카오링크 실행
-             KLKTalkLinkCenter.shared().sendDefault(with: template, success: { (warningMsg, argumentMsg) in
-             // 성공
-             print("warning message: \(String(describing: warningMsg))")
-             print("argument message: \(String(describing: argumentMsg))")
-             }, failure: { (error) in
-             // 실패
-             print("error \(error)")
-             })
-             } else if share_type == "KAKAOSTORY" {
-             if !StoryLinkHelper.canOpenStoryLink() {
-             StoryLinkHelper.openiTunes("itms://itunes.apple.com/app/id486244601")
-             return
-             }
-             let bundle = Bundle.main
-             var postMessage: String!
-             if let bundleId = bundle.bundleIdentifier, let appVersion: String = bundle.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
-             let appName: String = bundle.object(forInfoDictionaryKey: "CFBundleName") as? String {
-             postMessage = StoryLinkHelper.makeStoryLink("\(title) \(link_url)", appBundleId: bundleId, appVersion: appVersion, appName: appName, scrapInfo: nil)
-             }
-             if let urlString = postMessage {
-             _ = StoryLinkHelper.openSNSLink(urlString)
-             }
-             
-             } else if share_type == "LINE" {
-             if !StoryLinkHelper.canOpenLINE() {
-             StoryLinkHelper.openiTunes("itms://itunes.apple.com/app/id443904275")
-             return
-             }
-             let postMessage = StoryLinkHelper.makeLINELink("\(title) \(link_url)")
-             if let urlString = postMessage {
-             _ = StoryLinkHelper.openSNSLink(urlString)
-             }
-             
-             } else if share_type == "BAND" {
-             if !StoryLinkHelper.canOpenBAND() {
-             StoryLinkHelper.openiTunes("itms://itunes.apple.com/app/id542613198")
-             return
-             }
-             let postMessage = StoryLinkHelper.makeBANDLink("\(title) \(link_url)", Godowon.Domains.BaseUrl)
-             if let urlString = postMessage {
-             _ = StoryLinkHelper.openSNSLink(urlString)
-             }
-             }
-             */
+        var device_id = common.getUD("device_id")
+        var device_token = common.getUD("device_token")
+        var device_model = common.getUD("device_model")
+        var app_version = common.getUD("app_version")
+        
+        if(device_id == nil){
+            device_id = UIDevice.current.identifierForVendor!.uuidString
+            device_model = UIDevice.current.model
+            app_version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")
+                as? String
         }
+        
+        if (device_id == nil) {device_id=""}
+        if (device_token == nil) {device_token=""}
+        if (device_model == nil) {device_model=""}
+        if (app_version == nil) {app_version=""}
+        
+        common.setUD("device_id", device_id!)
+        common.setUD("device_token", device_token!)
+        common.setUD("device_model", device_model!)
+        common.setUD("app_version", app_version!)
+        
+        
+        let surl = common.api_url + "?action=sendDeviceInfo&device_type=iOS" +
+            "&device_id=" +  device_id! +
+            "&device_token=" +  device_token! +
+            "&device_model=" +  device_model! +
+            "&app_version=" +  app_version!
+        
+        
+        let hiddenurl = URL(string: surl)
+        let request = URLRequest(url: hiddenurl!)
+        webView.load(request)
     }
 }
 

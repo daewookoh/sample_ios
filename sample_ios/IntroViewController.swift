@@ -36,7 +36,7 @@ class IntroViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         setNavController()
         checkNetwork()
-        common.sendDeviceInfo()
+        //common.sendDeviceInfo()
         
         //apiHelper.delegate = self
         apiHelper.connectHttpAsync(resourceURL: common.api_url + "?action=getIntroImage&device_type=iOS")
