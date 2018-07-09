@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1896519D59B8B150EAFD85EF /* Pods_sample_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83230845C9CCF3E13A0548EF /* Pods_sample_ios.framework */; };
+		4C0DFB0F20F3266B0043FBA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C0DFB0E20F3266B0043FBA1 /* GoogleService-Info.plist */; };
 		4C51B1C320ECAFB2003AE666 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C51B1C220ECAFB2003AE666 /* Common.swift */; };
 		4C51B1CD20ECAFC0003AE666 /* dteams_logo_40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1C520ECAFBF003AE666 /* dteams_logo_40.png */; };
 		4C51B1CE20ECAFC0003AE666 /* dteams_logo_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1C620ECAFBF003AE666 /* dteams_logo_120.png */; };
@@ -30,7 +31,6 @@
 		4C51B1F320ECB0D7003AE666 /* KakaoCommon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1EF20ECB0D6003AE666 /* KakaoCommon.framework */; };
 		4C51B1F420ECB0D7003AE666 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1F020ECB0D6003AE666 /* KakaoMessageTemplate.framework */; };
 		4C51B1F520ECB0D7003AE666 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C51B1F120ECB0D7003AE666 /* KakaoLink.framework */; };
-		4C51B1FC20ECC241003AE666 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4C51B1FB20ECC241003AE666 /* GoogleService-Info.plist */; };
 		4C8B2ADB20EC8DC5003034D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2ADA20EC8DC5003034D8 /* AppDelegate.swift */; };
 		4C8B2ADD20EC8DC5003034D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C8B2ADC20EC8DC5003034D8 /* ViewController.swift */; };
 		4C8B2AE220EC8DC7003034D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C8B2AE120EC8DC7003034D8 /* Assets.xcassets */; };
@@ -62,6 +62,7 @@
 /* Begin PBXFileReference section */
 		1B32C983C6A0C15E87B4AC93 /* Pods-sample_iosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample_iosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-sample_iosTests/Pods-sample_iosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		25903C9107912B01F5E82A8D /* Pods-sample_iosUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sample_iosUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-sample_iosUITests/Pods-sample_iosUITests.release.xcconfig"; sourceTree = "<group>"; };
+		4C0DFB0E20F3266B0043FBA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C51B1C220ECAFB2003AE666 /* Common.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		4C51B1C520ECAFBF003AE666 /* dteams_logo_40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_40.png; sourceTree = "<group>"; };
 		4C51B1C620ECAFBF003AE666 /* dteams_logo_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dteams_logo_120.png; sourceTree = "<group>"; };
@@ -89,8 +90,6 @@
 		4C51B1EF20ECB0D6003AE666 /* KakaoCommon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoCommon.framework; sourceTree = "<group>"; };
 		4C51B1F020ECB0D6003AE666 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
 		4C51B1F120ECB0D7003AE666 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
-		4C51B1FA20ECBE7D003AE666 /* sample_ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = sample_ios.entitlements; sourceTree = "<group>"; };
-		4C51B1FB20ECC241003AE666 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4C8B2AD720EC8DC5003034D8 /* sample_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C8B2ADA20EC8DC5003034D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C8B2ADC20EC8DC5003034D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -186,7 +185,6 @@
 		4C8B2AD920EC8DC5003034D8 /* sample_ios */ = {
 			isa = PBXGroup;
 			children = (
-				4C51B1FA20ECBE7D003AE666 /* sample_ios.entitlements */,
 				4C8B2ADA20EC8DC5003034D8 /* AppDelegate.swift */,
 				4C51B1C220ECAFB2003AE666 /* Common.swift */,
 				4C51B1D920ECAFF4003AE666 /* APIHelper.swift */,
@@ -199,7 +197,7 @@
 				4C51B1E020ECAFFD003AE666 /* SnsLinkHelper.swift */,
 				4C8B2AE120EC8DC7003034D8 /* Assets.xcassets */,
 				4C8B2AE620EC8DC7003034D8 /* Info.plist */,
-				4C51B1FB20ECC241003AE666 /* GoogleService-Info.plist */,
+				4C0DFB0E20F3266B0043FBA1 /* GoogleService-Info.plist */,
 				4C8B2B4720EC9556003034D8 /* Main.storyboard */,
 				4C8B2AE320EC8DC7003034D8 /* LaunchScreen.storyboard */,
 				4C51B1C920ECAFC0003AE666 /* bridge.h */,
@@ -380,7 +378,7 @@
 				4C51B1EB20ECB025003AE666 /* NaverAuth.bundle in Resources */,
 				4C8B2AE220EC8DC7003034D8 /* Assets.xcassets in Resources */,
 				4C51B1D220ECAFC0003AE666 /* dteams_logo_180.png in Resources */,
-				4C51B1FC20ECC241003AE666 /* GoogleService-Info.plist in Resources */,
+				4C0DFB0F20F3266B0043FBA1 /* GoogleService-Info.plist in Resources */,
 				4C51B1D120ECAFC0003AE666 /* dteams_logo_60.png in Resources */,
 				4C51B1D020ECAFC0003AE666 /* dteams_logo_1024.png in Resources */,
 				4C51B1CD20ECAFC0003AE666 /* dteams_logo_40.png in Resources */,
