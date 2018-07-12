@@ -51,41 +51,4 @@ class Common {
         
         return formatter.string(from: date)
     }
-    
-    func sendDeviceInfo(){
-        
-        var device_id = getUD("device_id")
-        var device_token = getUD("device_token")
-        var device_model = getUD("device_model")
-        var app_version = getUD("app_version")
-        
-        if(device_id == nil){
-            device_id = UIDevice.current.identifierForVendor!.uuidString
-            device_model = UIDevice.current.model
-            app_version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString")
-                as? String
-        }
-        
-        if (device_id == nil) {device_id=""}
-        if (device_token == nil) {device_token=""}
-        if (device_model == nil) {device_model=""}
-        if (app_version == nil) {app_version=""}
-        
-        setUD("device_id", device_id!)
-        setUD("device_token", device_token!)
-        setUD("device_model", device_model!)
-        setUD("app_version", app_version!)
-
-        
-        let surl = self.api_url + "?action=sendDeviceInfo&device_type=iOS" +
-            "&device_id=" +  device_id! +
-            "&device_token=" +  device_token! +
-            "&device_model=" +  device_model! +
-            "&app_version=" +  app_version!
-        
-        apiHelper.connectHttpAsync(resourceURL:surl)
-    
-    }
- 
-    
 }
