@@ -19,6 +19,8 @@ class IntroViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        common.setUD("app_start_yn","Y")
+        
         if let imgData = UserDefaults.standard.object(forKey: "intro_image") as? NSData
         {
             if let image = UIImage(data: imgData as Data)

@@ -15,8 +15,6 @@ import FBSDKShareKit
 
 class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, XMLParserDelegate, MFMessageComposeViewControllerDelegate {
 
-    
-    
     // ios 11이하 버젼에서는 스토리보드를 이용한 WKWebView를 사용할수 없으므로 아래와 같이 수동처리
     //@IBOutlet weak var webView: WKWebView!
     var webView: WKWebView!
@@ -212,8 +210,12 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
     // 네이버 로그인 끝
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        //webView.evaluateJavaScript("sendDI(1,2,3,4)",completionHandler: nil)
-        sendDeviceInfo()
+        let app_start_yn = common.getUD("app_start_yn")
+        
+        if(app_start_yn=="Y")
+        {
+            sendDeviceInfo()
+        }
     }
     
     override func viewDidLoad() {
@@ -242,7 +244,7 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
         
         webView = WKWebView(frame: .zero, configuration: config)
         webView.uiDelegate = self as WKUIDelegate
-        webView.navigationDelegate = self as! WKNavigationDelegate
+        webView.navigationDelegate = self as WKNavigationDelegate
         
         view = webView
         
@@ -274,40 +276,33 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
                     session.presentingViewController = self
                     session.open(completionHandler: { (error) -> Void in
                         if error != nil{
-                            print(error?.localizedDescription)
+                            print(error?.localizedDescription as Any)
                         }else if session.isOpen() == true{
-                            KOSessionTask.meTask(completionHandler: { (profile , error) -> Void in
-                                if profile != nil{
-                                    DispatchQueue.main.async {
-                                        let kakao: KOUser = profile as! KOUser
-                                        print(String(describing: kakao.id))
-                                        
-                                        self.name = (kakao.properties!["nickname"] as? String)!
-                                        self.email = kakao.email!
-                                        self.id = kakao.id.stringValue
-                                        
-                                        /*
-                                        if let value = kakao.properties!["profile_image"] as? String {
-                                            print("profile image = \(value)")
-                                        }
-                                        if let value = kakao.properties!["thumbnail_image"] as? String {
-                                            print("thumbnail image = \(value)")
-                                        }
-                                        */
-                                        
-                                        let url = self.common.sns_callback_url +
-                                            "?login_type=kakao" +
-                                            "&success_yn=Y" +
-                                            "&id=" + self.id +
-                                            "&email=" + self.email +
-                                            "&name=" + self.name
-                                        
-                                        print(url)
-                                        
-                                        self.loadPage(url: url)
-                                    }
+                            
+                            KOSessionTask.userMeTask(completion: { (error, me) in
+                                if let error = error as NSError? {
+                                    self.alert(title: "kakaologin_error", msg: error.description)
+                                } else if let me = me as KOUserMe? {
+                                    print("id: \(String(describing: me.id))")
+                                    
+                                    self.name = (me.properties!["nickname"])!
+                                    self.email = (me.account?.email)!
+                                    self.id = me.id!
+                                    
+                                    let url = self.common.sns_callback_url +
+                                        "?login_type=kakao" +
+                                        "&success_yn=Y" +
+                                        "&id=" + self.id +
+                                        "&email=" + self.email +
+                                        "&name=" + self.name
+                                    
+                                    print(url)
+                                    
+                                    self.loadPage(url: url)
+                                    
+                                } else {
+                                    print("has no id")
                                 }
-
                             })
                         }else{
                             print("isNotOpen")
@@ -576,22 +571,13 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
         common.setUD("device_token", device_token!)
         common.setUD("device_model", device_model!)
         common.setUD("app_version", app_version!)
+        common.setUD("app_start_yn", "N")
         
-        print(device_model!)
-        webView.evaluateJavaScript("sendDI('"+device_id!+"','"+device_token!+"','"+device_model!+"','"+app_version!+"')", completionHandler:nil)
-        /*
-        let surl = common.api_url + "?action=sendDeviceInfo&device_type=iOS" +
-            "&device_id=" +  device_id! +
-            "&device_token=" +  device_token! +
-            "&device_model=" +  device_model! +
-            "&app_version=" +  app_version!
-        
-        print(surl)
-        let hiddenurl = URL(string: surl)
-        let request = URLRequest(url: hiddenurl!)
-        webView.load(request)
-        */
-
+        let data = "act=setAppDeviceInfo&device_type=iOS" +
+                    "&device_id="+device_id!+"&device_token="+device_token!+"&device_model="+device_model!+"&app_version="+app_version!
+        let enc_data = Data(data.utf8).base64EncodedString()
+        print("jsNativeToServer(enc_data)")
+        webView.evaluateJavaScript("jsNativeToServer('" + enc_data + "')", completionHandler:nil)
         
     }
 }
