@@ -90,7 +90,7 @@ class APIHelper {
                         
                     }
                     
-                    if(result_msg == "INTRO_IMAGE_SUCCESS")
+                    if(result_code=="0000" && result_msg == "INTRO_IMAGE_SUCCESS")
                     {
                         if let img_url = jsonResult?["img_url"] as? String{
                             self.downloadImage(img_url: img_url, type: "intro_image")
