@@ -15,6 +15,9 @@ import FBSDKShareKit
 
 class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelegate, WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, XMLParserDelegate, MFMessageComposeViewControllerDelegate {
 
+    
+    var refreshControl:UIRefreshControl?
+    
     // ios 11이하 버젼에서는 스토리보드를 이용한 WKWebView를 사용할수 없으므로 아래와 같이 수동처리
     //@IBOutlet weak var webView: WKWebView!
     var webView: WKWebView!
@@ -210,6 +213,8 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
     // 네이버 로그인 끝
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        refreshControl?.endRefreshing()
+        
         let app_start_yn = common.getUD("app_start_yn")
         
         if(app_start_yn=="Y")
@@ -248,6 +253,14 @@ class MainViewController: UIViewController, NaverThirdPartyLoginConnectionDelega
         
         view = webView
         
+        refreshControl = UIRefreshControl.init()
+        refreshControl!.addTarget(self, action:#selector(pullToRefresh), for: UIControl.Event.valueChanged)
+        webView.scrollView.addSubview(self.refreshControl!)
+        
+    }
+    
+    @objc func pullToRefresh(refresh:UIRefreshControl){
+        webView.reload()
     }
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
@@ -608,6 +621,11 @@ extension MainViewController {
         DispatchQueue.main.async {
             self.present(alertController, animated: true, completion: nil)
         }
+    }
+    
+    @objc func applicationDidBecomeActive(notification: NSNotification) {
+        refreshControl?.beginRefreshing()
+        webView.reload()
     }
 }
 

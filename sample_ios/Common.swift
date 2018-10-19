@@ -12,7 +12,7 @@ import UIKit
 class Common {
     
     let app_name:String = "드림팀즈"
-    let default_url:String = "http://m.dreamteams.co.kr"
+    let default_url:String = "http://m.dreamteams.co.kr/step.php"
     let api_url:String = "http://m.dreamteams.co.kr/app/api.php"
     let sns_callback_url:String = "http://m.dreamteams.co.kr/sns/callback_from_app.php"
     let user_agent:String = "dreamteams_app_ios"
